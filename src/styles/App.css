@@ -1,0 +1,296 @@
+/* src/styles/App.css */
+
+/* Variáveis de Cores */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+
+  --font-family: 'Roboto', sans-serif;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --border-radius: 8px;
+
+  --button-radius: 4px;
+  --transition-speed: 0.3s;
+}
+
+/* Resetando margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do Corpo */
+body {
+  font-family: var(--font-family);
+  background-color: #f0f2f5;
+  color: #333333;
+}
+
+/* Container Centralizado */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Estilo do Card Principal */
+.card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 400px;
+}
+
+/* Títulos */
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+}
+
+/* Botões */
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--button-radius);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: darken(var(--success-color), 10%);
+  transform: translateY(-2px);
+}
+
+.btn-info {
+  background-color: var(--info-color);
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: darken(var(--info-color), 10%);
+  transform: translateY(-2px);
+}
+
+/* Modais */
+.modal-content {
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  color: var(--dark-color);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 1rem;
+}
+
+/* Formulários */
+.form-label {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.form-control {
+  border-radius: var(--button-radius);
+  border: 1px solid #ced4da;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+/* Alertas */
+.alert {
+  border-radius: var(--button-radius);
+}
+
+/* Tabelas */
+.table {
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table thead {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .card {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 0);
+}
+.btn-primary:hover,
+.btn-success:hover,
+.btn-info:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.alert {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* src/styles/App.css */
+
+/* ... código existente ... */
+
+/* Modo Escuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
+}
+
+body.dark-mode .btn-primary {
+  background-color: #bb86fc;
+}
+
+body.dark-mode .btn-success {
+  background-color: #03dac6;
+}
+
+body.dark-mode .btn-info {
+  background-color: #03a9f4;
+}
+
+body.dark-mode .btn-secondary {
+  background-color: #333333;
+}
+
+body.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
+}
+
+body.dark-mode .form-control {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+body.dark-mode .form-control:focus {
+  border-color: #bb86fc;
+  box-shadow: 0 0 0 0.2rem rgba(187, 134, 252, 0.25);
+}
+
+body.dark-mode .table thead {
+  background-color: #bb86fc;
+  color: #ffffff;
+}
+
+body.dark-mode .table tbody tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .table tbody tr:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .alert {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
+
+body.dark-mode .spinner-border {
+  color: #bb86fc;
+}
+
+/* Ajuste para o botão de alternância */
+button.btn-light {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+body.dark-mode button.btn-light {
+  background-color: #333333;
+  color: #ffffff;
+}
